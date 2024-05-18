@@ -6,14 +6,21 @@ import { useState } from "react";
 import LoadingSection from "./LoadingSection";
 import styled from "styled-components";
 import { ThemeProvider, createTheme } from "@mui/material/styles/index.js";
+import RouterPage from "./components/RouterPage";
+
+import React from "react";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const theme = createTheme({
   palette: {
-    mode: "dark",
+    // mode: "light",
     primary: {
-      main: "#e8eaf6",
+      main: "#000000",
     },
     secondary: {
-      main: "#8bc34a",
+      main: "#000000",
     },
   },
 });
@@ -176,6 +183,13 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [outputData, setOutput] = useState(null);
 
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterPage />
+      <ToastContainer />
+    </ThemeProvider>
+  );
+
   let outputComp = <Message>Press submit to see the prediction</Message>;
 
   if (loading) {
@@ -242,7 +256,11 @@ function App() {
   async function onSubmit() {
     setLoading(true);
 
-    let url = `https://crop-yield-production-fastapi.onrender.com/test-model?state=${stateName}&type=${cropType}&area=${area}`;
+    let path = `calculate-result?state=${stateName.trim()}&type=${cropType.trim()}&area=${area.trim()}`;
+    let url = `https://crop-yield-production-fastapi.onrender.com/${path}`;
+
+    if (window.location.href.indexOf("localhost") !== -1)
+      url = `http://127.0.0.1:8000/${path}`;
 
     try {
       const data = await axios.get(url);

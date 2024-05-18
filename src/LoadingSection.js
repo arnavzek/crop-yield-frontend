@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BarLoader from "./BarLoader";
+import BarLoader from "./components/BarLoader";
 
 const Main = styled.div`
   width: 100%;
