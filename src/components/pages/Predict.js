@@ -110,6 +110,10 @@ const ResultCard = styled.div`
   font-size: 30px;
   gap: 30px;
   padding: 30px;
+
+  @media (max-width: 900px) {
+    font-size: 10px;
+  }
 `;
 
 const Inputs = styled.div`
@@ -129,6 +133,10 @@ const Card = styled.div`
   flex-direction: column;
   padding: 0;
   width: 38vw;
+
+  @media (max-width: 900px) {
+    width: 90vw;
+  }
 `;
 
 const FieldAndValue = styled.div`

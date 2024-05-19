@@ -8,6 +8,11 @@ const Container = styled.div`
   width: 100vw;
   overflow: hidden;
   background-color: var(--color2);
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const LeftSection = styled.div`
@@ -18,6 +23,11 @@ const LeftSection = styled.div`
   align-items: center;
   background-color: var(--translucentInteraction);
   gap: 20px;
+
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 const Inputs = styled.div`
@@ -34,6 +44,10 @@ const RightSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 const HeroImage = styled.img`
   width: 60vw;

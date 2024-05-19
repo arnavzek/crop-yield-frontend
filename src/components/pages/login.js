@@ -22,7 +22,7 @@ const MainInputs = styled.div`
   align-items: center;
   gap: 25px;
   margin-top: 50px;
-  width: 20vw;
+  width: 70%;
 `;
 const PrimaryButton = styled(Button)`
   padding: 10px 20px;

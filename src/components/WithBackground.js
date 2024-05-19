@@ -4,6 +4,11 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
+
+  @media (max-width: 900px) {
+    height: auto;
+    min-height: 100vh;
+  }
 `;
 
 const Background = styled.div`

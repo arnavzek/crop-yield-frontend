@@ -43,8 +43,8 @@ const Right = styled.div`
 
   @media (max-width: 900px) {
     width: 100vw;
-    overflow: hidden;
-    height: auto;
+    overflow: unset;
+    height: unset;
   }
 `;
 
@@ -205,7 +205,7 @@ const NavContainer = styled.div`
   color: var(--color1);
   font-weight: 900;
   padding: 15px;
-  width: 70%;
+  width: 100%;
   border-radius: 10px;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
@@ -213,6 +213,10 @@ const NavContainer = styled.div`
   cursor: pointer;
   &:hover {
     background-color: var(--color3);
+  }
+
+  @media (max-width: 900px) {
+    width: 90%;
   }
 `;
 const NavIcon = styled.div`

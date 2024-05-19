@@ -27,6 +27,12 @@ const Row1 = styled.div`
 `;
 
 export default function DashboardStat({ prodData }) {
+  let width = window.innerWidth * 0.3;
+
+  if (window.innerWidth < 900) {
+    width = window.innerWidth * 0.9;
+  }
+
   return (
     <Container>
       <Row1>
@@ -68,7 +74,7 @@ export default function DashboardStat({ prodData }) {
               label: "Production Stat",
             },
           ]}
-          width={400}
+          width={width}
           height={400}
         />
       </Row1>

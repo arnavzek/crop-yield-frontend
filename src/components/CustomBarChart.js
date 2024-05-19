@@ -7,7 +7,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   /* margin-top: 10px; */
-  width: 33vw;
+  width: auto;
   align-items: center;
 `;
 const Title = styled.div`
@@ -17,6 +17,12 @@ const Title = styled.div`
 `;
 
 export default function CustomBarChart({ data, labels, title }) {
+  let width = window.innerWidth * 0.3;
+
+  if (window.innerWidth < 900) {
+    width = window.innerWidth * 0.9;
+  }
+
   return (
     <Container>
       <Title>{title}</Title>
@@ -45,7 +51,7 @@ export default function CustomBarChart({ data, labels, title }) {
             label: labels[3],
           },
         ]}
-        width={window.innerWidth * 0.3}
+        width={width}
         height={400}
       />
     </Container>

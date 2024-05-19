@@ -14,6 +14,10 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 900px) {
+    height: auto;
+  }
 `;
 
 const Title = styled.div`
@@ -26,6 +30,10 @@ const Team = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 20px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const Section = styled.div`
   margin-top: 50px;
