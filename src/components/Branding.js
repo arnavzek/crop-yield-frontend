@@ -7,6 +7,10 @@ const Container = styled.div`
   gap: 20px;
   margin-top: 60px;
   margin-bottom: 30px;
+
+  @media (max-width: 900px) {
+    margin-top: 20px;
+  }
 `;
 const Logo = styled.img`
   height: 60px;

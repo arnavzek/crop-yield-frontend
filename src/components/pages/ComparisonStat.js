@@ -7,16 +7,23 @@ import makeRequest from "../../controllers/makeRequest";
 import BarLoader from "../BarLoader";
 import Button from "../Button";
 import { BarChart, PieChart } from "@mui/x-charts";
+import CustomBarChart from "../CustomBarChart";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 50px;
+  margin-top: 50px;
   width: 100%;
 `;
 const Row1 = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export default function ComparisonStat({ states, data }) {
@@ -24,51 +31,27 @@ export default function ComparisonStat({ states, data }) {
   return (
     <Container>
       <Row1>
-        <BarChart
-          xAxis={[{ scaleType: "band", data: states }]}
-          series={[
-            {
-              data: data.rice,
-              label: "Rice Production Comparison",
-            },
-          ]}
-          width={window.innerWidth * 0.3}
-          height={400}
+        <CustomBarChart
+          title="Rice Production"
+          data={data.rice}
+          labels={states}
         />
-        <BarChart
-          xAxis={[{ scaleType: "band", data: states }]}
-          series={[
-            {
-              data: data.wheat,
-              label: "Wheat Production Comparison",
-            },
-          ]}
-          width={window.innerWidth * 0.3}
-          height={400}
+        <CustomBarChart
+          title="Wheat Production"
+          data={data.wheat}
+          labels={states}
         />
-      </Row1>{" "}
+      </Row1>
       <Row1>
-        <BarChart
-          xAxis={[{ scaleType: "band", data: states }]}
-          series={[
-            {
-              data: data.maze,
-              label: "Maze Production Comparison",
-            },
-          ]}
-          width={window.innerWidth * 0.3}
-          height={400}
+        <CustomBarChart
+          title="Maze Production"
+          data={data.maze}
+          labels={states}
         />
-        <BarChart
-          xAxis={[{ scaleType: "band", data: states }]}
-          series={[
-            {
-              data: data.barley,
-              label: "Barley Production Comparison",
-            },
-          ]}
-          width={window.innerWidth * 0.3}
-          height={400}
+        <CustomBarChart
+          title="Barley Production"
+          data={data.barley}
+          labels={states}
         />
       </Row1>
     </Container>

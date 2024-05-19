@@ -11,6 +11,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   height: 100vh;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100vw;
+  }
 `;
 
 const Left = styled.div`
@@ -21,6 +28,11 @@ const Left = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: var(--translucentInteraction);
+
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: auto;
+  }
 `;
 
 const Right = styled.div`
@@ -28,6 +40,12 @@ const Right = styled.div`
   height: 100vh;
   overflow-y: auto;
   background-color: #fff;
+
+  @media (max-width: 900px) {
+    width: 100vw;
+    overflow: hidden;
+    height: auto;
+  }
 `;
 
 const Bottom = styled.div`
@@ -35,6 +53,7 @@ const Bottom = styled.div`
   width: 100%;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 `;
 
 const Navigation = styled.div`
@@ -43,6 +62,17 @@ const Navigation = styled.div`
   gap: 20px;
   margin-bottom: 50px;
   align-items: center;
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: row;
+    /* width: 90vw; */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 const UserInfo = styled.div`
@@ -56,6 +86,13 @@ const UserInfo = styled.div`
   gap: 20px;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 900px) {
+    border-radius: 10px;
+    padding: 5px;
+    width: 62vw;
+    margin-bottom: 30px;
+  }
 `;
 
 const UserInfoMain = styled.div`
@@ -65,14 +102,26 @@ const UserInfoMain = styled.div`
   width: 70%;
   gap: 20px;
   align-items: center;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
 `;
 
-const UserInfoLeft = styled.div``;
+const UserInfoLeft = styled.div`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
 
 const UserImage = styled.img`
   height: 65px;
   width: 65px;
   border-radius: 100px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const UserInfoRight = styled.div`
@@ -85,6 +134,10 @@ const NameOfUser = styled.div`
   text-transform: capitalize;
   font-weight: 900;
   font-size: 25px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const LogoutButton = styled.div`
@@ -169,11 +222,19 @@ const NavIcon = styled.div`
   justify-content: flex-start;
   align-items: center;
   color: var(--color1) !important;
+
+  @media (max-width: 900px) {
+    font-size: 10px;
+  }
 `;
 const NavLabel = styled.div`
   font-size: 19px;
   font-weight: 600;
   color: var(--color1);
+
+  @media (max-width: 900px) {
+    font-size: 10px;
+  }
 `;
 
 function Nav({ path, icon, children }) {

@@ -74,6 +74,10 @@ const Inputs = styled.div`
   flex-direction: row;
   gap: 20px;
   margin-bottom: 20px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const SubmitButton = styled(Button)`
