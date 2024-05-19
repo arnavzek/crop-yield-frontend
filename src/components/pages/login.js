@@ -106,7 +106,7 @@ export default function Login() {
 
     try {
       let authData = await makeRequest("/login", "POST", {
-        username,
+        username: username.toLowerCase(),
         password,
       });
 
